@@ -1,0 +1,29 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - merhaba
+    - selam
+    - nasılsın
+    - iyi günler
+
+- intent: what_is_iso50001
+  examples: |
+    - ISO 50001 nedir?
+    - ISO 50001 standardı hakkında bilgi verir misin?
+    - Enerji yönetim sistemi standardını açıklar mısın?
+    - ISO 50001'in amacı nedir?
+
+- intent: iso50001_benefits
+  examples: |
+    - ISO 50001'in faydaları nelerdir?
+    - ISO 50001 uygulamanın avantajları neler?
+    - Enerji yönetim sistemi kurmanın faydaları nelerdir?
+    - ISO 50001 bize ne kazandırır?
+
+- intent: iso50001_implementation
+  examples: |
+    - ISO 50001 nasıl uygulanır?
+    - Enerji yönetim sistemi kurulum adımları nelerdir?
+    - ISO 50001 sertifikası nasıl alınır?
+    - ISO 50001 uygulama süreci nasıl işler?

@@ -1,0 +1,27 @@
+version: "3.1"
+
+stories:
+- story: greet path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: goodbye path
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: what is iso50001
+  steps:
+  - intent: what_is_iso50001
+  - action: utter_what_is_iso50001
+
+- story: iso50001 benefits
+  steps:
+  - intent: iso50001_benefits
+  - action: utter_iso50001_benefits
+
+- story: iso50001 implementation
+  steps:
+  - intent: iso50001_implementation
+  - action: utter_iso50001_implementation
