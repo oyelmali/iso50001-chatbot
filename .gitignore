@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
+actions/__pycache__/
 env/
 build/
 develop-eggs/
