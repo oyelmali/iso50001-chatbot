@@ -3,6 +3,432 @@ version: "3.1"
 intents:
   - greet
   - goodbye
+
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - nlu_fallback
+  - feedback_positive 
+  - feedback_negative 
+  - ask_iso50001_purpose
+  - ask_iso50001_applicability
+  - ask_enms_definition
+  - ask_iso50001_framework
+  - ask_pdca_approach
+  - ask_top_management_role
+  - ask_iso50001_compatibility
+  - ask_iso50001_certification
+  - ask_iso50001_requirements
+  - ask_iso50001_energy_types
+  - ask_energy_policy
+  - ask_iso50001_integration
+  - ask_iso50001_scope
+  - ask_energy_definition
+  - ask_energy_baseline
+  - ask_energy_consumption
+  - ask_energy_efficiency
+  - ask_enms_team
+  - ask_energy_objective
+  - ask_energy_performance
+  - ask_energy_performance_indicator
+  - ask_energy_review
+  - ask_energy_services
+  - ask_energy_target
+  - ask_energy_use
+  - ask_interested_party
+  - ask_internal_audit
+  - ask_nonconformity
+  - ask_organization
+  - ask_preventive_action
+  - ask_procedure
+  - ask_record
+  - ask_significant_energy_use
+  - ask_boundaries
+  - ask_continual_improvement
+  - ask_correction
+  - ask_corrective_action
+  - ask_general_requirements
+  - ask_management_responsibility
+  - ask_top_management_commitment
+  - ask_management_representative
+  - ask_energy_policy_requirements
+  - ask_energy_planning_process
+  - ask_legal_requirements
+  - ask_energy_review_process
+  - ask_energy_baseline_establishment
+  - ask_enpi_identification
+  - ask_energy_objectives_targets
+  - ask_implementation_operation
+  - ask_competence_training
+  - ask_communication_requirements
+  - ask_documentation_requirements
+  - ask_document_control
+  - ask_operational_control
+  - ask_design_considerations
+  - ask_procurement
+  - ask_monitoring_measurement
+  - ask_compliance_evaluation
+  - ask_internal_audit_process
+  - ask_nonconformities_handling
+  - ask_records_control
+  - ask_management_review_process
+  - ask_management_review_input
+  - ask_management_review_output
+  - ask_annex_a_purpose
+  - ask_energy_performance_concept
+  - ask_management_responsibility_guidance
+  - ask_energy_policy_guidance
+  - ask_energy_planning_guidance
+  - ask_energy_review_guidance
+  - ask_energy_baseline_guidance
+  - ask_enpi_guidance
+  - ask_energy_objectives_guidance
+  - ask_implementation_operation_guidance
+  - ask_competence_training_guidance
+  - ask_documentation_guidance
+  - ask_operational_control_guidance
+  - ask_procurement_guidance
+  - ask_internal_audit_guidance
+  - ask_management_review_guidance
+  - ask_benchmarking
+  - ask_energy_audit
+  - ask_iso_standards_correspondence
+  - ask_iso50001_iso9001_correspondence
+  - ask_iso50001_iso14001_correspondence
+  - ask_iso50001_iso22000_correspondence
+  - ask_management_system_integration
+  - ask_common_elements_standards
+  - ask_specific_clause_correspondence
+
+
+
+
+
+responses:
+  utter_greet:
+  - text: "Hello! I can help you with information about standard of ISO 50001.\n\nExample questions you can ask:\n\n    - Who can use ISO 50001?\n    - What is an energy policy in ISO 50001?\n    - What is the scope of ISO 50001?\n    - What is a procedure in ISO 50001?\n    - How does ISO 50001 correspond to ISO 9001?\n    - What is energy performance in ISO 50001?\n    - What is the role of top management in ISO 50001?"
+
+  utter_mood_unhappy:
+  - text: "I'm sorry to hear that you're feeling down. Sometimes implementing management systems like ISO 50001 can feel overwhelming, but remember that it leads to significant energy and cost savings in the long run. How can I help make your ISO 50001 journey easier today?"   
+  - text: "I understand that things can be difficult sometimes. Many organizations find that a structured approach like ISO 50001 actually helps reduce stress by providing clear guidelines. Is there a specific aspect of energy management I can help clarify for you?"
+
+  utter_can_i_help_you:
+  - text: "Can I help you?"
+
+
+  utter_happy:
+  - text: "Great! How can I assist you with ISO 50001?"
+
+  utter_goodbye:
+  - text: "Goodbye! Feel free to ask about ISO 50001 anytime."
+
+  utter_iamabot:
+  - text: "I am a bot specialized in ISO 50001 Energy Management Systems."
+
+  utter_fallback:
+  - text: "I'm sorry, I didn't understand your question. Which aspect of ISO 50001 standard would you like to know about?"
+  - text: "I'm not sure I understand. Could you rephrase your question about ISO 50001?"
+ # payload güncellemesi gerekli response eklenecek
+  utter_help_options:
+    - text: "Here are some ways I can help with ISO 50001:\n\n- Can ISO 50001 be used for renewable energy?\n- What does the energy planning process involve?\n- What is an energy target? \n\nWhat would you like to know about?"
+      buttons:
+      - title: "Energy Types"
+        payload: "/iso50001_energy_types"
+      - title: "Energy Planning Process"
+        payload: "/energy_planning_process"
+      - title: "Energy Target"
+        payload: "/ask_benefits"  
+
+  utter_ask_feedback:
+  - text: "Was this information helpful?"
+    buttons:
+    - title: "Yes, thank you"
+      payload: "/feedback_positive"
+    - title: "No, I need more information"
+      payload: "/feedback_negative"
+  
+  utter_feedback_positive:
+    - text: "Great! How else can I help you with ISO 50001?"
+  
+  utter_feedback_negative:
+    - text: "I'm sorry. Could you please provide more details about what you're looking for?"
+
+  utter_enms_definition_detailed:
+    - text: "An Energy Management System (EnMS) goes beyond a simple policy document. It's a comprehensive framework that includes:\n\n1. Organizational structure with defined roles and responsibilities\n2. Energy planning process that identifies significant energy uses\n3. Baseline measurements to track improvements\n4. Performance indicators to monitor progress\n5. Operational controls to manage significant energy uses\n6. Monitoring and measurement procedures\n7. Internal audit processes\n8. Management review mechanisms\n\nThe EnMS follows the Plan-Do-Check-Act cycle, creating a continuous improvement loop. Organizations typically start by conducting an energy review, establishing a baseline, setting objectives, implementing action plans, checking results, and then taking corrective actions. This systematic approach ensures that energy management becomes embedded in organizational culture rather than being a one-time initiative."
+
+  utter_energy_policy_detailed:
+    - text: "A well-crafted energy policy in ISO 50001 serves as the cornerstone of the entire energy management system. It should be:\n\n1. Appropriate to the nature and scale of the organization's energy use\n2. Specific enough to guide action but broad enough to remain relevant over time\n3. Endorsed and actively championed by top management\n4. Communicated effectively to all levels of the organization\n5. Regularly reviewed and updated as needed\n\nThe policy typically includes specific commitments to:\n- Continual improvement in energy performance\n- Ensuring availability of information and resources\n- Complying with applicable legal requirements\n- Supporting the purchase of energy-efficient products and services\n- Considering energy performance in design activities\n\nOrganizations often display their energy policy prominently, incorporate it into training programs, and reference it in communication materials to ensure it drives behavior throughout the organization."
+
+  utter_pdca_approach_detailed:
+    - text: "The Plan-Do-Check-Act (PDCA) cycle in ISO 50001 is a dynamic and iterative process that drives continuous improvement:\n\n**Plan (in detail):**\n- Conduct comprehensive energy review identifying all energy sources and uses\n- Analyze energy consumption patterns and identify significant energy uses (SEUs)\n- Establish energy baseline using appropriate measurement methods\n- Define meaningful energy performance indicators (EnPIs)\n- Set measurable objectives and targets at relevant functions and levels\n- Develop detailed action plans with responsibilities, means, and timeframes\n\n**Do (in detail):**\n- Allocate resources and assign responsibilities\n- Build awareness and competence through training\n- Implement operational controls for SEUs\n- Execute energy improvement projects\n- Maintain effective communication channels\n- Document key system elements\n\n**Check (in detail):**\n- Monitor energy performance using established EnPIs\n- Measure key characteristics of operations affecting energy performance\n- Evaluate compliance with legal requirements\n- Conduct internal audits of the EnMS\n- Track progress toward objectives and targets\n- Identify and address nonconformities\n\n**Act (in detail):**\n- Review energy performance and EnMS results with top management\n- Recognize achievements and address shortfalls\n- Implement corrective and preventive actions\n- Adjust objectives, targets and action plans as needed\n- Allocate resources for continual improvement\n- Identify new opportunities for performance improvement\n\nThis cycle creates a feedback loop that drives ongoing energy performance improvement and ensures the EnMS remains effective and relevant."
+
+  utter_iso50001_purpose:
+  - text: "The purpose of ISO 50001 is to enable organizations to establish the systems and processes necessary to improve energy performance, including energy efficiency, use and consumption. Implementation of this International Standard is intended to lead to reductions in greenhouse gas emissions and other related environmental impacts and energy cost through systematic management of energy."
+
+  utter_iso50001_applicability:
+  - text: "ISO 50001 is applicable to all types and sizes of organizations, irrespective of geographical, cultural or social conditions."
+
+  utter_enms_definition:
+  - text: "An Energy Management System (EnMS) is a system upon which an organization can develop and implement an energy policy, and establish objectives, targets, and action plans which take into account legal requirements and information related to significant energy use. An EnMS enables an organization to achieve its policy commitments, take action as needed to improve its energy performance and demonstrate the conformity of the system to the requirements of the International Standard."
+
+  utter_iso50001_framework:
+  - text: "ISO 50001 is based on the Plan - Do - Check - Act (PDCA) continual improvement framework and incorporates energy management into everyday organizational practices."
+
+  utter_pdca_approach:
+  - text: "In the context of energy management, the PDCA approach is outlined as follows:\n\n    - Plan: conduct the energy review and establish the baseline, energy performance indicators (EnPIs), objectives, targets and action plans necessary to deliver results that will improve energy performance in accordance with the organization's energy policy\n    - Do: implement the energy management action plans\n    - Check: monitor and measure processes and the key characteristics of operations that determine energy performance against the energy policy and objectives, and report the results\n    - Act: take actions to continually improve energy performance and the EnMS"
+
+  utter_top_management_role:
+  - text: "Successful implementation of ISO 50001 depends on commitment from all levels and functions of the organization, and especially from top management."
+
+  utter_iso50001_compatibility:
+  - text: "ISO 50001 is based on the common elements of ISO management system standards, ensuring a high level of compatibility notably with ISO 9001 and ISO 14001."
+
+  utter_iso50001_certification:
+  - text: "Yes, ISO 50001 can be used for certification, registration and self-declaration of an organization's EnMS."
+
+  utter_iso50001_requirements:
+  - text: "ISO 50001 does not establish absolute requirements for energy performance beyond the commitments in the energy policy of the organization and its obligation to comply with applicable legal requirements and other requirements. Thus, two organizations carrying out similar operations, but having different energy performance, can both conform to its requirements."
+
+  utter_iso50001_energy_types:
+  - text: "ISO 50001 is applicable irrespective of the types of energy used."
+
+  utter_energy_policy:
+  - text: "Energy policy forms the foundation of an organization's energy management system. According to ISO 50001, an organization can develop an energy policy and establish objectives, targets, and action plans based on this policy."
+
+  utter_iso50001_integration:
+  - text: "An organization can choose to integrate ISO 50001 with other management systems, including those related to quality, the environment and occupational health and safety."
+
+  utter_iso50001_scope:
+  - text: "ISO 50001 specifies requirements for establishing, implementing, maintaining and improving an energy management system, whose purpose is to enable an organization to follow a systematic approach in achieving continual improvement of energy performance, including energy efficiency, energy use and consumption. It specifies requirements applicable to energy use and consumption, including measurement, documentation and reporting, design and procurement practices for equipment, systems, processes and personnel that contribute to energy performance. The standard applies to all variables affecting energy performance that can be monitored and influenced by the organization, but does not prescribe specific performance criteria with respect to energy."
+
+  utter_energy_definition:
+  - text: "In ISO 50001, energy refers to electricity, fuels, steam, heat, compressed air, and other like media. For the purposes of this International Standard, energy refers to the various forms of energy, including renewable, which can be purchased, stored, treated, used in equipment or in a process, or recovered. Energy can be defined as the capacity of a system to produce external activity or perform work."
+
+  utter_energy_baseline:
+  - text: "An energy baseline is a quantitative reference providing a basis for comparison of energy performance. An energy baseline reflects a specified period of time. It can be normalized using variables which affect energy use and/or consumption, e.g. production level, degree days (outdoor temperature), etc. The energy baseline is also used for calculation of energy savings, as a reference before and after implementation of energy performance improvement actions."
+
+  utter_energy_consumption:
+  - text: "Energy consumption is defined as the quantity of energy applied."
+
+  utter_energy_efficiency:
+  - text: "Energy efficiency is a ratio or other quantitative relationship between an output of performance, service, goods or energy, and an input of energy. Examples include conversion efficiency, energy required/energy used, output/input, theoretical energy used to operate/energy used to operate. Both input and output need to be clearly specified in quantity and quality, and be measurable."
+
+  utter_enms_team:
+  - text: "An energy management team consists of person(s) responsible for effective implementation of the energy management system activities and for delivering energy performance improvements. The size and nature of the organization, and available resources, will determine the size of the team. The team may be one person, such as the management representative."
+
+  utter_energy_objective:
+  - text: "An energy objective is a specified outcome or achievement set to meet the organization's energy policy related to improved energy performance."
+
+  utter_energy_performance:
+  - text: "Energy performance refers to measurable results related to energy efficiency, energy use and energy consumption. In the context of energy management systems, results can be measured against the organization's energy policy, objectives, targets and other energy performance requirements. Energy performance is one component of the performance of the energy management system."
+
+  utter_energy_performance_indicator:
+  - text: "An Energy Performance Indicator (EnPI) is a quantitative value or measure of energy performance, as defined by the organization. EnPIs could be expressed as a simple metric, ratio or a more complex model."
+
+  utter_energy_review:
+  - text: "An energy review is the determination of the organization's energy performance based on data and other information, leading to identification of opportunities for improvement. In other regional or national standards, concepts such as identification and review of energy aspects or energy profile are included in the concept of energy review."
+
+  utter_energy_services:
+  - text: "Energy services are activities and their results related to the provision and/or use of energy."
+
+  utter_energy_target:
+  - text: "An energy target is a detailed and quantifiable energy performance requirement, applicable to the organization or parts thereof, that arises from the energy objective and that needs to be set and met in order to achieve this objective."
+
+  utter_energy_use:
+  - text: "Energy use refers to the manner or kind of application of energy. Examples include ventilation, lighting, heating, cooling, transportation, processes, and production lines."
+
+  utter_interested_party:
+  - text: "An interested party is a person or group concerned with, or affected by, the energy performance of the organization."
+
+  utter_internal_audit:
+  - text: "An internal audit is a systematic, independent and documented process for obtaining evidence and evaluating it objectively in order to determine the extent to which requirements are fulfilled."
+
+  utter_nonconformity:
+  - text: "Nonconformity is defined as the non-fulfilment of a requirement."
+
+  utter_organization:
+  - text: "An organization refers to a company, corporation, firm, enterprise, authority or institution, or part or combination thereof, whether incorporated or not, public or private, that has its own functions and administration and that has the authority to control its energy use and consumption. An organization can be a person or a group of people."
+
+  utter_preventive_action:
+  - text: "Preventive action is an action to eliminate the cause of a potential nonconformity. There can be more than one cause for a potential nonconformity. Preventive action is taken to prevent occurrence, whereas corrective action is taken to prevent recurrence."
+
+  utter_procedure:
+  - text: "A procedure is a specified way to carry out an activity or a process. Procedures can be documented or not. When a procedure is documented, the term 'written procedure' or 'documented procedure' is frequently used."
+
+  utter_record:
+  - text: "A record is a document stating results achieved or providing evidence of activities performed. Records can be used, for example, to document traceability and to provide evidence of verification, preventive action and corrective action."
+
+  utter_significant_energy_use:
+  - text: "Significant energy use is energy use accounting for substantial energy consumption and/or offering considerable potential for energy performance improvement. Significance criteria are determined by the organization."
+
+  utter_boundaries:
+  - text: "Boundaries refer to physical or site limits and/or organizational limits as defined by the organization. Examples include a process, a group of processes, a site, an entire organization, or multiple sites under the control of an organization."
+
+  utter_continual_improvement:
+  - text: "Continual improvement is a recurring process which results in enhancement of energy performance and the energy management system. The process of establishing objectives and finding opportunities for improvement is a continual process. Continual improvement achieves improvements in overall energy performance, consistent with the organization's energy policy."
+
+  utter_correction:
+  - text: "Correction is an action to eliminate a detected nonconformity."
+
+  utter_corrective_action:
+  - text: "Corrective action is an action to eliminate the cause of a detected nonconformity. There can be more than one cause for a nonconformity. Corrective action is taken to prevent recurrence whereas preventive action is taken to prevent occurrence."
+  utter_general_requirements:
+  - text: "According to ISO 50001, an organization shall:\n\n    - establish, document, implement, maintain and improve an EnMS in accordance with the requirements of the International Standard\n    - define and document the scope and boundaries of its EnMS\n    - determine how it will meet the requirements of the International Standard in order to achieve continual improvement of its energy performance and of its EnMS"
+
+  utter_management_responsibility:
+  - text: "Management responsibility in ISO 50001 is divided into two main areas: top management commitment and the role of the management representative. Top management must demonstrate commitment to support the EnMS and continually improve its effectiveness, while the management representative is appointed to ensure the EnMS is established, implemented, maintained, and continually improved."
+
+  utter_top_management_commitment:
+  - text: "Top management shall demonstrate its commitment to support the EnMS and to continually improve its effectiveness by:\n\n    - defining, establishing, implementing and maintaining an energy policy\n    - appointing a management representative and approving the formation of an energy management team\n    - providing necessary resources\n    - identifying the scope and boundaries\n    - communicating the importance of energy management\n    - ensuring energy objectives and targets are established\n    - ensuring EnPIs are appropriate\n    - considering energy performance in long-term planning\n    - ensuring results are measured and reported\n    - conducting management reviews"
+
+  utter_management_representative:
+  - text: "According to ISO 50001, top management shall appoint a management representative with appropriate skills and competence who has the responsibility and authority to:\n\n    - ensure the EnMS is established, implemented, maintained, and continually improved\n    - identify persons to work with the management representative\n    - report to top management on energy performance\n    - report on the performance of the EnMS\n    - ensure planning supports the energy policy\n    - define and communicate responsibilities and authorities\n    - determine criteria and methods for effective operation and control\n    - promote awareness of the energy policy and objectives at all levels"
+
+  utter_energy_policy_requirements:
+  - text: "The energy policy shall state the organization's commitment to achieving energy performance improvement. Top management shall define the energy policy and ensure that it:\n\n    - is appropriate to the nature and scale of energy use and consumption\n    - includes a commitment to continual improvement\n    - includes a commitment to ensure information and resources availability\n    - includes a commitment to comply with applicable requirements\n    - provides a framework for setting and reviewing objectives and targets\n    - supports energy-efficient purchases and design\n    - is documented and communicated at all levels\n    - is regularly reviewed and updated as necessary"
+
+  utter_energy_planning_process:
+  - text: "According to ISO 50001, the organization shall conduct and document an energy planning process. Energy planning shall be consistent with the energy policy and shall lead to activities that continually improve energy performance. Energy planning shall involve a review of the organization's activities that can affect energy performance. The process includes legal requirements review, energy review, establishing energy baseline, identifying EnPIs, and setting energy objectives, targets and action plans."
+
+  utter_legal_requirements:
+  - text: "The organization shall identify, implement, and have access to applicable legal requirements and other requirements related to its energy use, consumption and efficiency. The organization shall determine how these requirements apply and ensure they are considered in establishing, implementing and maintaining the EnMS. Legal requirements and other requirements shall be reviewed at defined intervals."
+
+  utter_energy_review_process:
+  - text: "The organization shall develop, record, and maintain an energy review with documented methodology and criteria. To develop the energy review, the organization shall:\n\n    - analyze energy use and consumption based on measurement and other data\n    - identify areas of significant energy use\n    - identify, prioritize and record opportunities for improving energy performance\n\nThe energy review shall be updated at defined intervals and in response to major changes."
+
+  utter_energy_baseline_establishment:
+  - text: "The organization shall establish an energy baseline using information from the initial energy review, considering a data period suitable to the organization's energy use and consumption. Changes in energy performance shall be measured against the baseline. Adjustments to the baseline shall be made when EnPIs no longer reflect organizational energy use, when major changes occur to processes or energy systems, or according to a predetermined method. The energy baseline shall be maintained and recorded."
+
+  utter_enpi_identification:
+  - text: "The organization shall identify Energy Performance Indicators (EnPIs) appropriate for monitoring and measuring its energy performance. The methodology for determining and updating the EnPIs shall be recorded and regularly reviewed. EnPIs shall be reviewed and compared to the energy baseline as appropriate."
+
+  utter_energy_objectives_targets:
+  - text: "The organization shall establish, implement and maintain documented energy objectives and targets at relevant functions, levels, processes or facilities. Time frames shall be established for achievement. Objectives and targets shall be consistent with the energy policy, and targets shall be consistent with objectives. When establishing and reviewing objectives and targets, the organization shall consider legal requirements, significant energy uses, improvement opportunities, financial and operational conditions, technological options, and views of interested parties. Action plans shall be established, implemented, maintained, documented, and updated at defined intervals."
+
+  utter_implementation_operation:
+  - text: "For implementation and operation, the organization shall use the action plans and other outputs resulting from the planning process. This includes ensuring competence and training, establishing communication processes, maintaining documentation, implementing operational controls, considering energy performance in design, and establishing procurement criteria for energy services, products, equipment and energy."
+
+  utter_competence_training:
+  - text: "The organization shall ensure that persons working for or on its behalf, related to significant energy uses, are competent based on education, training, skills or experience. The organization shall identify training needs, provide training or take other actions to meet these needs, and maintain records. The organization shall ensure awareness of the energy policy, procedures, EnMS requirements, roles and responsibilities, benefits of improved performance, and the impact of activities on energy performance."
+
+  utter_communication_requirements:
+  - text: "The organization shall communicate internally regarding its energy performance and EnMS. It shall establish a process for any person working for or on behalf of the organization to make comments or suggest improvements. The organization shall decide whether to communicate externally about its energy policy, EnMS and performance, document this decision, and if decided, establish and implement a method for external communication."
+
+  utter_documentation_requirements:
+  - text: "The organization shall establish, implement and maintain information to describe the core elements of the EnMS and their interaction. The EnMS documentation shall include:\n\n    - the scope and boundaries\n    - the energy policy\n    - objectives, targets, and action plans\n    - required documents and records\n    - other necessary documents\n\nThe degree of documentation can vary based on organization scale, process complexity, and personnel competence."
+
+  utter_document_control:
+  - text: "Documents required by ISO 50001 and the EnMS shall be controlled. The organization shall establish procedures to:\n\n    - approve documents before issue\n    - periodically review and update documents\n    - identify changes and revision status\n    - ensure relevant versions are available at points of use\n    - ensure documents remain legible and identifiable\n    - identify and control external documents\n    - prevent unintended use of obsolete documents and identify retained obsolete documents"
+
+  utter_operational_control:
+  - text: "The organization shall identify and plan operations and maintenance activities related to significant energy uses to ensure they are carried out under specified conditions by:\n\n    - establishing criteria for effective operation and maintenance\n    - operating and maintaining facilities, processes, systems and equipment according to operational criteria\n    - communicating operational controls to relevant personnel\n\nWhen planning for contingency situations, energy performance may be considered in determining responses."
+
+  utter_design_considerations:
+  - text: "The organization shall consider energy performance improvement opportunities and operational control in the design of new, modified and renovated facilities, equipment, systems and processes that can significantly impact energy performance. Energy performance evaluation results shall be incorporated into specification, design and procurement activities where appropriate. Design activity results shall be recorded."
+
+  utter_procurement:
+  - text: "When procuring energy services, products and equipment that impact significant energy use, the organization shall inform suppliers that procurement is partly evaluated on energy performance. The organization shall establish criteria for assessing energy use, consumption and efficiency over the planned operating lifetime. Energy purchasing specifications shall be defined and documented as applicable for effective energy use."
+
+  utter_monitoring_measurement:
+  - text: "The organization shall ensure that key characteristics determining energy performance are monitored, measured and analyzed at planned intervals. Key characteristics include significant energy uses, relevant variables, EnPIs, action plan effectiveness, and actual versus expected consumption. Results shall be recorded. An energy measurement plan shall be defined and implemented. The organization shall define measurement needs, ensure equipment accuracy, investigate significant deviations, and maintain records."
+
+  utter_compliance_evaluation:
+  - text: "At planned intervals, the organization shall evaluate compliance with legal requirements and other requirements related to its energy use and consumption. Records of the compliance evaluation results shall be maintained."
+
+  utter_internal_audit_process:
+  - text: "The organization shall conduct internal audits at planned intervals to ensure the EnMS conforms to planned arrangements, conforms with objectives and targets, and is effectively implemented, maintained, and improves energy performance. An audit plan and schedule shall be developed considering process status and importance and previous audit results. Auditor selection and audit conduct shall ensure objectivity and impartiality. Audit results shall be maintained and reported to top management."
+
+  utter_nonconformities_handling:
+  - text: "The organization shall address actual and potential nonconformities by making corrections and taking corrective and preventive actions, including:\n\n    - reviewing nonconformities\n    - determining causes\n    - evaluating the need for action\n    - implementing appropriate action\n    - maintaining records\n    - reviewing action effectiveness\n\nActions shall be appropriate to the magnitude of problems and consequences. Necessary changes shall be made to the EnMS."
+
+  utter_records_control:
+  - text: "The organization shall establish and maintain records to demonstrate conformity to EnMS requirements and energy performance results. The organization shall define and implement controls for record identification, retrieval and retention. Records shall remain legible, identifiable and traceable to the relevant activity."
+
+  utter_management_review_process:
+  - text: "At planned intervals, top management shall review the organization's EnMS to ensure its continuing suitability, adequacy and effectiveness. Records of management review shall be maintained."
+
+  utter_management_review_input:
+  - text: "Inputs to the management review shall include:\n\n    - follow-up actions from previous reviews\n    - energy policy review\n    - energy performance and EnPIs review\n    - compliance evaluation results and legal changes\n    - extent of objectives and targets achievement\n    - EnMS audit results\n    - corrective and preventive actions status\n    - projected energy performance\n    - recommendations for improvement"
+
+  utter_management_review_output:
+  - text: "Outputs from the management review shall include decisions or actions related to:\n\n    - changes in energy performance\n    - changes to energy policy\n    - changes to EnPIs\n    - changes to objectives, targets or other EnMS elements, consistent with continual improvement commitment\n    - changes to resource allocation"
+
+  utter_annex_a_purpose:
+  - text: "Annex A provides informative guidance on the use of ISO 50001. The additional text in this annex is strictly informative and is intended to prevent misinterpretation of the requirements contained in Clause 4. While this information addresses and is consistent with the requirements of Clause 4, it is not intended to add to, subtract from, or in any way modify these requirements."
+
+  utter_energy_performance_concept:
+  - text: "The concept of energy performance includes energy use, energy efficiency and energy consumption. Thus the organization can choose from a wide range of energy performance activities. For example, the organization could reduce peak demand, utilize surplus or waste energy or improve the operations of its systems, processes or equipment. Figure A.1 in the standard provides an illustrative conceptual representation of energy performance showing the relationships between energy use, energy consumption, energy efficiency, energy intensity, and other aspects of energy performance."
+
+  utter_management_responsibility_guidance:
+  - text: "Top management, or its representative, when communicating to those in the organization, can support the importance of energy management through employee involvement activities such as empowerment, motivation, recognition, training and rewards and participation. Organizations conducting long-term planning can include energy management considerations such as energy source, energy performance, and energy performance improvements in the planning activities. The management representative may be a current, new or contracted organization employee, and their responsibilities may represent all or part of the job function. The energy management team ensures delivery of energy performance improvements, and its size is determined by the organization's complexity."
+
+  utter_energy_policy_guidance:
+  - text: "The energy policy is the driver for implementing and improving an organization's EnMS and energy performance within its scope and boundaries. The policy may be a brief statement that members of the organization can readily understand and apply to their work activities. The energy policy dissemination can be used as a driver to manage organizational behaviour. Where transportation is procured or used by the organization, the energy use and consumption of transport can be included in the scope and boundaries of the EnMS."
+
+  utter_energy_planning_guidance:
+  - text: "Figure A.2 in the standard provides a conceptual diagram intended to improve understanding of the energy planning process. This clause focuses on the energy performance of the organization and tools to maintain and continually improve energy performance. The energy planning process includes analyzing energy use and consumption, identifying areas of significant energy use, and identifying opportunities for improving energy performance, which lead to outputs such as energy baseline, EnPIs, objectives, targets, and action plans."
+
+  utter_energy_review_guidance:
+  - text: "The process of identification and evaluation of energy use should lead the organization to define areas of significant energy use and identify opportunities for improving energy performance. Examples of personnel working on behalf of the organization include service contractors, part-time personnel and temporary staff. Potential sources of energy can include conventional sources that have not been previously used by an organization. Alternative energy sources can include fossil or non-fossil fuels. Updating the energy review means updating the information related to the analysis, determination of significance and determination of improving energy performance opportunities."
+
+  utter_energy_baseline_guidance:
+  - text: "A suitable data period for an energy baseline means the organization accounts for regulatory requirements or variables that affect the energy use and consumption. Variables can include weather, seasons, business activity cycles and other conditions. The energy baseline is maintained and recorded as a means for the organization to determine the records maintenance period. The adjustments to the baseline are also considered maintenance and the requirements are defined in the International Standard."
+
+  utter_enpi_guidance:
+  - text: "Energy Performance Indicators (EnPIs) can be a simple parameter, a simple ratio or a complex model. Examples of EnPIs can include energy consumption per time, energy consumption per unit of production, and multi-variable models. The organization can choose EnPIs that inform the energy performance of their operation and can update the EnPIs when business activities or baselines change that affect the relevance of the EnPI, as applicable."
+
+  utter_energy_objectives_guidance:
+  - text: "In addition to action plans focused on achieving specific improvements in energy performance, an organization may have action plans that focus on achieving improvements in overall energy management or improvement in the processes of the EnMS itself. Action plans for these types of improvements can also state how the organization will verify the results achieved by the action plan. For example, an organization may have an action plan designed to achieve increased employee and contractor awareness of energy management behaviour. The extent to which the action plan achieves the increased awareness and other results should be verified using the method determined by the organization and documented in the action plan."
+
+  utter_implementation_operation_guidance:
+  - text: "The Implementation and Operation section of Annex A provides guidance on how organizations should implement their energy management system and operate it effectively. This includes considerations for competence, training and awareness, communication, documentation, operational control, design, and procurement of energy services, products, equipment and energy."
+
+  utter_competence_training_guidance:
+  - text: "The organization defines competence, training and awareness requirements based on its organizational needs. Competency is based on a relevant combination of education, training, skills and experience."
+
+  utter_documentation_guidance:
+  - text: "The only procedures that have to be documented are ones that are specified as a documented procedure. The organization can develop any documents that it deems necessary to effectively demonstrate energy performance and support the EnMS."
+
+  utter_operational_control_guidance:
+  - text: "An organization should evaluate those of its operations that are associated with its identified significant energy use and ensure that they are conducted in a way that will control or reduce the adverse impacts associated with them, in order to fulfil the requirements of its energy policy and meet its objectives and targets. This should include all parts of its operations, including maintenance activities."
+
+  utter_procurement_guidance:
+  - text: "Procurement is an opportunity to improve energy performance through the use of more efficient products and services. It is also an opportunity to work with the supply chain and influence its energy behaviour. The applicability of energy purchasing specifications may vary from market to market. Energy purchasing specification elements could include energy quality, availability, cost structure, environmental impact and renewable sources. The organization may use the specification proposed by an energy supplier, as appropriate."
+
+  utter_internal_audit_guidance:
+  - text: "Internal audits of an energy management system can be performed by personnel from within the organization, or by external persons selected by the organization, working on its behalf. In either case, the persons conducting the audit should be competent and in a position to do so impartially and objectively. In smaller organizations, auditor independence can be demonstrated by an auditor being free from responsibility for the activity being audited. If an organization wishes to combine audits of its energy management system with other internal audits, the intent and scope of each should be clearly defined. An energy audit or assessment is not the same concept as an internal audit of an EnMS or an internal audit of the energy performance of an EnMS."
+
+  utter_management_review_guidance:
+  - text: "The management review should cover the scope of the energy management system, although not all elements of the energy management system need to be reviewed at once and the review process may take place over a period of time."
+
+  utter_benchmarking:
+  - text: "Benchmarking is the process of collecting, analysing and relating energy performance data of comparable activities with the purpose of evaluating and comparing performance between or within entities. Different types of benchmarking exist, ranging from internal benchmarking, for the purpose of highlighting good practices within the organization, to external benchmarking, in order to establish the 'best in industry/sector' performance of an installation/facility or a specific product/service in the same field or sector. The benchmark process can be applied to any or all of these elements. Provided relevant and accurate data are available, benchmarking is a valuable input to an objective energy review, and consequent setting of energy objectives and energy targets."
+
+  utter_energy_audit:
+  - text: "An energy audit or assessment comprises a detailed review of the energy performance of an organization, of a process, or both. It is typically based on appropriate measurement and observation of actual energy performance. Audit outputs typically include information on current consumption and performance, and they can be accompanied by a series of ranked recommendations for improvement in terms of energy performance. Energy audits are planned and conducted as part of the identification and prioritization of opportunities to improve energy performance. An energy audit or assessment is not the same concept as an internal audit of an EnMS or an internal audit of the energy performance of an EnMS."
+
+  utter_iso_standards_correspondence:
+  - text: "ISO 50001:2011 has correspondence with other ISO management system standards including ISO 9001:2008 (Quality Management), ISO 14001:2004 (Environmental Management), and ISO 22000:2005 (Food Safety Management). Annex B of ISO 50001 provides a detailed correspondence table showing how clauses in ISO 50001 align with clauses in these other standards. This correspondence facilitates the integration of energy management with other management systems an organization may have implemented."
+
+  utter_iso50001_iso9001_correspondence:
+  - text: "ISO 50001:2011 (Energy Management) and ISO 9001:2008 (Quality Management) share many common elements and a similar structure. Key correspondences include: General requirements (4.1 in both), Management responsibility (4.2 in ISO 50001, 5 in ISO 9001), Policy (4.3 in ISO 50001, 5.3 in ISO 9001), Planning (4.4 in ISO 50001, 5.4 in ISO 9001), Implementation and operation (4.5 in ISO 50001, 7 in ISO 9001), Checking (4.6 in both), and Management review (4.7 in ISO 50001, 5.6 in ISO 9001). The main difference is that ISO 50001 focuses specifically on energy performance while ISO 9001 focuses on quality management."
+
+  utter_iso50001_iso14001_correspondence:
+  - text: "ISO 50001:2011 (Energy Management) and ISO 14001:2004 (Environmental Management) have strong alignment as both deal with resource management and environmental aspects. Key correspondences include: General requirements (4.1 in both), Management responsibility (4.2 in ISO 50001, 4.4.1 in ISO 14001), Policy (4.3 in ISO 50001, 4.2 in ISO 14001), Planning (4.4 in ISO 50001, 4.3 in ISO 14001), Implementation and operation (4.5 in ISO 50001, 4.4 in ISO 14001), Checking (4.6 in both), and Management review (4.7 in ISO 50001, 4.6 in ISO 14001). ISO 50001 focuses specifically on energy while ISO 14001 covers broader environmental impacts."
+
+  utter_iso50001_iso22000_correspondence:
+  - text: "ISO 50001:2011 (Energy Management) and ISO 22000:2005 (Food Safety Management) share a common management system approach. Key correspondences include: General requirements (4.1 in both), Management responsibility (4.2 in ISO 50001, 5 in ISO 22000), Policy (4.3 in ISO 50001, 5.2 in ISO 22000), Planning (4.4 in ISO 50001, 7 in ISO 22000), Implementation and operation (4.5 in ISO 50001, 7 in ISO 22000), Checking (4.6 in ISO 50001, 8 in ISO 22000), and Management review (4.7 in ISO 50001, 5.8 in ISO 22000). While ISO 50001 focuses on energy management, ISO 22000 focuses on food safety."
+
+  utter_management_system_integration:
+  - text: "The correspondence between ISO 50001 and other management system standards (ISO 9001, ISO 14001, ISO 22000) facilitates the integration of multiple management systems. Organizations can leverage these similarities to develop an integrated management system that addresses quality, environmental, energy, and food safety requirements simultaneously. This integration can reduce duplication of effort, streamline documentation, simplify auditing processes, and create a more cohesive approach to organizational management."
+
+  utter_common_elements_standards:
+  - text: "Common elements across ISO management system standards (ISO 50001, ISO 9001, ISO 14001, ISO 22000) include:\n\n    - General requirements\n    - Management responsibility\n    - Policy development\n    - Planning processes\n    - Implementation and operation procedures\n    - Competence and training requirements\n    - Documentation and control of documents\n    - Operational control\n    - Checking and monitoring\n    - Internal audit processes\n    - Management of nonconformities\n    - Corrective and preventive actions\n    - Control of records\n    - Management review\n\nThese common elements form the foundation of the Plan-Do-Check-Act (PDCA) cycle that is central to all ISO management system standards."
+
+  utter_specific_clause_correspondence:
+  - text: "The correspondence table in Annex B of ISO 50001 provides detailed mapping between specific clauses. For example, ISO 50001 clause 4.5.2 (Competence, training and awareness) corresponds to ISO 9001 clause 6.2.2, ISO 14001 clause 4.4.2, and ISO 22000 clause 6.2.2. Similarly, ISO 50001 clause 4.6.3 (Internal audit) corresponds to ISO 9001 clause 8.2.2, ISO 14001 clause 4.5.5, and ISO 22000 clause 8.4.1. This detailed mapping helps organizations identify exactly how requirements in one standard relate to requirements in another standard."
   - what_is_iso50001
   - iso50001_benefits
   - iso50001_implementation
@@ -25,6 +451,7 @@ responses:
 
   utter_iso50001_implementation:
   - text: "ISO 50001 uygulaması genellikle şu adımları içerir: Üst yönetim desteğinin sağlanması, mevcut enerji durumunun değerlendirilmesi, enerji politikası ve hedeflerinin belirlenmesi, enerji yönetim ekibinin oluşturulması, enerji performans göstergelerinin tanımlanması, izleme ve ölçüm sistemlerinin kurulması, dokümantasyon ve iç denetimler."
+
 
 session_config:
   session_expiration_time: 60

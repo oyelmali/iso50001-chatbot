@@ -1,0 +1,32 @@
+# Git dosyaları
+.git
+.gitignore
+
+# Cache dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.rasa/
+
+# Eski model dosyaları (en son model hariç)
+# Not: Dockerfile içinde en son modeli seçtiğimiz için tüm models klasörünü hariç tutmuyoruz
+
+# Geçici dosyalar
+*.log
+*.tmp
+.DS_Store
+
+# Geliştirme ortamı dosyaları
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sanal ortam
+venv/
+env/
+ENV/
+
+# Diğer gereksiz dosyalar
+*.zip

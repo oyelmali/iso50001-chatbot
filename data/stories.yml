@@ -1,27 +1,485 @@
 version: "3.1"
 
 stories:
-- story: greet path
+- story: happy path
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
 
-- story: goodbye path
+- story: sad path 1
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+  - action: utter_can_i_help_you
+  - intent: affirm
+  - action: utter_feedback_positive
+  - action: utter_help_options
 
-- story: what is iso50001
+- story: sad path 2
   steps:
-  - intent: what_is_iso50001
-  - action: utter_what_is_iso50001
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+  - action: utter_can_i_help_you
+  - intent: deny
+  - action: utter_feedback_negative
 
-- story: iso50001 benefits
+- story: ask about ISO 50001 purpose
   steps:
-  - intent: iso50001_benefits
-  - action: utter_iso50001_benefits
+  - intent: ask_iso50001_purpose
+  - action: utter_iso50001_purpose
 
-- story: iso50001 implementation
+- story: ask about ISO 50001 applicability
   steps:
-  - intent: iso50001_implementation
-  - action: utter_iso50001_implementation
+  - intent: ask_iso50001_applicability
+  - action: utter_iso50001_applicability
+
+- story: ask about EnMS definition
+  steps:
+  - intent: ask_enms_definition
+  - action: utter_enms_definition
+  - intent: request_more_detail
+  - action: utter_enms_definition_detailed
+  - action: utter_ask_feedback
+
+- story: ask about ISO 50001 framework
+  steps:
+  - intent: ask_iso50001_framework
+  - action: utter_iso50001_framework
+
+- story: ask about PDCA approach
+  steps:
+  - intent: ask_pdca_approach
+  - action: utter_pdca_approach
+  - intent: request_more_detail
+  - action: utter_pdca_approach_detailed
+  - action: utter_ask_feedback
+
+
+- story: ask about top management role
+  steps:
+  - intent: ask_top_management_role
+  - action: utter_top_management_role
+
+- story: ask about ISO 50001 compatibility
+  steps:
+  - intent: ask_iso50001_compatibility
+  - action: utter_iso50001_compatibility
+
+- story: ask about ISO 50001 certification
+  steps:
+  - intent: ask_iso50001_certification
+  - action: utter_iso50001_certification
+
+- story: ask about ISO 50001 requirements
+  steps:
+  - intent: ask_iso50001_requirements
+  - action: utter_iso50001_requirements
+
+- story: ask about ISO 50001 energy types
+  steps:
+  - intent: ask_iso50001_energy_types
+  - action: utter_iso50001_energy_types
+
+- story: ask about energy policy
+  steps:
+  - intent: ask_energy_policy
+  - action: utter_energy_policy
+  - intent: request_more_detail
+  - action: utter_energy_policy_detailed
+  - action: utter_ask_feedback
+
+- story: ask about ISO 50001 integration
+  steps:
+  - intent: ask_iso50001_integration
+  - action: utter_iso50001_integration
+
+- story: ask about ISO 50001 scope
+  steps:
+  - intent: ask_iso50001_scope
+  - action: utter_iso50001_scope
+
+- story: ask about energy definition
+  steps:
+  - intent: ask_energy_definition
+  - action: utter_energy_definition
+
+- story: ask about energy baseline
+  steps:
+  - intent: ask_energy_baseline
+  - action: utter_energy_baseline
+
+- story: ask about energy consumption
+  steps:
+  - intent: ask_energy_consumption
+  - action: utter_energy_consumption
+
+- story: ask about energy efficiency
+  steps:
+  - intent: ask_energy_efficiency
+  - action: utter_energy_efficiency
+
+- story: ask about EnMS team
+  steps:
+  - intent: ask_enms_team
+  - action: utter_enms_team
+
+- story: ask about energy objective
+  steps:
+  - intent: ask_energy_objective
+  - action: utter_energy_objective
+
+- story: ask about energy performance
+  steps:
+  - intent: ask_energy_performance
+  - action: utter_energy_performance
+
+- story: ask about energy performance indicator
+  steps:
+  - intent: ask_energy_performance_indicator
+  - action: utter_energy_performance_indicator
+
+- story: ask about energy review
+  steps:
+  - intent: ask_energy_review
+  - action: utter_energy_review
+
+- story: ask about energy services
+  steps:
+  - intent: ask_energy_services
+  - action: utter_energy_services
+
+- story: ask about energy target
+  steps:
+  - intent: ask_energy_target
+  - action: utter_energy_target
+
+- story: ask about energy use
+  steps:
+  - intent: ask_energy_use
+  - action: utter_energy_use
+
+- story: ask about interested party
+  steps:
+  - intent: ask_interested_party
+  - action: utter_interested_party
+
+- story: ask about internal audit
+  steps:
+  - intent: ask_internal_audit
+  - action: utter_internal_audit
+
+- story: ask about nonconformity
+  steps:
+  - intent: ask_nonconformity
+  - action: utter_nonconformity
+
+- story: ask about organization
+  steps:
+  - intent: ask_organization
+  - action: utter_organization
+
+- story: ask about preventive action
+  steps:
+  - intent: ask_preventive_action
+  - action: utter_preventive_action
+
+- story: ask about procedure
+  steps:
+  - intent: ask_procedure
+  - action: utter_procedure
+
+- story: ask about record
+  steps:
+  - intent: ask_record
+  - action: utter_record
+
+- story: ask about significant energy use
+  steps:
+  - intent: ask_significant_energy_use
+  - action: utter_significant_energy_use
+
+- story: ask about boundaries
+  steps:
+  - intent: ask_boundaries
+  - action: utter_boundaries
+
+- story: ask about continual improvement
+  steps:
+  - intent: ask_continual_improvement
+  - action: utter_continual_improvement
+
+- story: ask about correction
+  steps:
+  - intent: ask_correction
+  - action: utter_correction
+
+- story: ask about corrective action
+  steps:
+  - intent: ask_corrective_action
+  - action: utter_corrective_action
+
+- story: ask about general requirements
+  steps:
+  - intent: ask_general_requirements
+  - action: utter_general_requirements
+
+- story: ask about management responsibility
+  steps:
+  - intent: ask_management_responsibility
+  - action: utter_management_responsibility
+
+- story: ask about top management commitment
+  steps:
+  - intent: ask_top_management_commitment
+  - action: utter_top_management_commitment
+
+- story: ask about management representative
+  steps:
+  - intent: ask_management_representative
+  - action: utter_management_representative
+
+- story: ask about energy policy requirements
+  steps:
+  - intent: ask_energy_policy_requirements
+  - action: utter_energy_policy_requirements
+
+- story: ask about energy planning process
+  steps:
+  - intent: ask_energy_planning_process
+  - action: utter_energy_planning_process
+
+- story: ask about legal requirements
+  steps:
+  - intent: ask_legal_requirements
+  - action: utter_legal_requirements
+
+- story: ask about energy review process
+  steps:
+  - intent: ask_energy_review_process
+  - action: utter_energy_review_process
+
+- story: ask about energy baseline establishment
+  steps:
+  - intent: ask_energy_baseline_establishment
+  - action: utter_energy_baseline_establishment
+
+- story: ask about EnPI identification
+  steps:
+  - intent: ask_enpi_identification
+  - action: utter_enpi_identification
+
+- story: ask about energy objectives and targets
+  steps:
+  - intent: ask_energy_objectives_targets
+  - action: utter_energy_objectives_targets
+
+- story: ask about implementation and operation
+  steps:
+  - intent: ask_implementation_operation
+  - action: utter_implementation_operation
+
+- story: ask about competence and training
+  steps:
+  - intent: ask_competence_training
+  - action: utter_competence_training
+
+- story: ask about communication requirements
+  steps:
+  - intent: ask_communication_requirements
+  - action: utter_communication_requirements
+
+- story: ask about documentation requirements
+  steps:
+  - intent: ask_documentation_requirements
+  - action: utter_documentation_requirements
+
+- story: ask about document control
+  steps:
+  - intent: ask_document_control
+  - action: utter_document_control
+
+- story: ask about operational control
+  steps:
+  - intent: ask_operational_control
+  - action: utter_operational_control
+
+- story: ask about design considerations
+  steps:
+  - intent: ask_design_considerations
+  - action: utter_design_considerations
+
+- story: ask about procurement
+  steps:
+  - intent: ask_procurement
+  - action: utter_procurement
+
+- story: ask about monitoring and measurement
+  steps:
+  - intent: ask_monitoring_measurement
+  - action: utter_monitoring_measurement
+
+- story: ask about compliance evaluation
+  steps:
+  - intent: ask_compliance_evaluation
+  - action: utter_compliance_evaluation
+
+- story: ask about internal audit process
+  steps:
+  - intent: ask_internal_audit_process
+  - action: utter_internal_audit_process
+
+- story: ask about nonconformities handling
+  steps:
+  - intent: ask_nonconformities_handling
+  - action: utter_nonconformities_handling
+
+- story: ask about records control
+  steps:
+  - intent: ask_records_control
+  - action: utter_records_control
+
+- story: ask about management review process
+  steps:
+  - intent: ask_management_review_process
+  - action: utter_management_review_process
+
+- story: ask about management review input
+  steps:
+  - intent: ask_management_review_input
+  - action: utter_management_review_input
+
+- story: ask about management review output
+  steps:
+  - intent: ask_management_review_output
+  - action: utter_management_review_output
+
+- story: ask about Annex A purpose
+  steps:
+  - intent: ask_annex_a_purpose
+  - action: utter_annex_a_purpose
+
+- story: ask about energy performance concept
+  steps:
+  - intent: ask_energy_performance_concept
+  - action: utter_energy_performance_concept
+
+- story: ask about management responsibility guidance
+  steps:
+  - intent: ask_management_responsibility_guidance
+  - action: utter_management_responsibility_guidance
+
+- story: ask about energy policy guidance
+  steps:
+  - intent: ask_energy_policy_guidance
+  - action: utter_energy_policy_guidance
+
+- story: ask about energy planning guidance
+  steps:
+  - intent: ask_energy_planning_guidance
+  - action: utter_energy_planning_guidance
+
+- story: ask about energy review guidance
+  steps:
+  - intent: ask_energy_review_guidance
+  - action: utter_energy_review_guidance
+
+- story: ask about energy baseline guidance
+  steps:
+  - intent: ask_energy_baseline_guidance
+  - action: utter_energy_baseline_guidance
+
+- story: ask about EnPI guidance
+  steps:
+  - intent: ask_enpi_guidance
+  - action: utter_enpi_guidance
+
+- story: ask about energy objectives guidance
+  steps:
+  - intent: ask_energy_objectives_guidance
+  - action: utter_energy_objectives_guidance
+
+- story: ask about implementation operation guidance
+  steps:
+  - intent: ask_implementation_operation_guidance
+  - action: utter_implementation_operation_guidance
+
+- story: ask about competence training guidance
+  steps:
+  - intent: ask_competence_training_guidance
+  - action: utter_competence_training_guidance
+
+- story: ask about documentation guidance
+  steps:
+  - intent: ask_documentation_guidance
+  - action: utter_documentation_guidance
+
+- story: ask about operational control guidance
+  steps:
+  - intent: ask_operational_control_guidance
+  - action: utter_operational_control_guidance
+
+- story: ask about procurement guidance
+  steps:
+  - intent: ask_procurement_guidance
+  - action: utter_procurement_guidance
+
+- story: ask about internal audit guidance
+  steps:
+  - intent: ask_internal_audit_guidance
+  - action: utter_internal_audit_guidance
+
+- story: ask about management review guidance
+  steps:
+  - intent: ask_management_review_guidance
+  - action: utter_management_review_guidance
+
+- story: ask about benchmarking
+  steps:
+  - intent: ask_benchmarking
+  - action: utter_benchmarking
+
+- story: ask about energy audit
+  steps:
+  - intent: ask_energy_audit
+  - action: utter_energy_audit
+
+- story: ask about ISO standards correspondence
+  steps:
+  - intent: ask_iso_standards_correspondence
+  - action: utter_iso_standards_correspondence
+
+- story: ask about ISO 50001 and ISO 9001 correspondence
+  steps:
+  - intent: ask_iso50001_iso9001_correspondence
+  - action: utter_iso50001_iso9001_correspondence
+
+- story: ask about ISO 50001 and ISO 14001 correspondence
+  steps:
+  - intent: ask_iso50001_iso14001_correspondence
+  - action: utter_iso50001_iso14001_correspondence
+
+- story: ask about ISO 50001 and ISO 22000 correspondence
+  steps:
+  - intent: ask_iso50001_iso22000_correspondence
+  - action: utter_iso50001_iso22000_correspondence
+
+- story: ask about management system integration
+  steps:
+  - intent: ask_management_system_integration
+  - action: utter_management_system_integration
+
+- story: ask about common elements in standards
+  steps:
+  - intent: ask_common_elements_standards
+  - action: utter_common_elements_standards
+
+- story: ask about specific clause correspondence
+  steps:
+  - intent: ask_specific_clause_correspondence
+  - action: utter_specific_clause_correspondence

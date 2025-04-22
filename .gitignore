@@ -1,18 +1,64 @@
-# Python
+# Python bytecode
 __pycache__/
 *.py[cod]
 *$py.class
-venv/
-ENV/
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Rasa
+# Rasa specific
 .rasa/
 models/
 results/
+*.tar.gz
 
-# IDE
+# Virtual Environment
+venv/
+ENV/
+
+# IDE specific files
 .idea/
 .vscode/
+*.swp
+*.swo
+.DS_Store
 
 # Logs
 *.log
+logs/
+npm-debug.log*
+
+# Training data
+training_results.txt
+
+# Credentials (güvenlik için)
+# credentials.yml  # Eğer hassas bilgiler içeriyorsa yorum işaretini kaldırın
+
+# Local model storage
+models/
+
+# Temporary files
+tmp/
+temp/
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv

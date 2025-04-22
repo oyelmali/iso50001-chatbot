@@ -1,29 +1,1076 @@
 version: "3.1"
+
 nlu:
 - intent: greet
   examples: |
-    - merhaba
-    - selam
-    - nasılsın
-    - iyi günler
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
 
-- intent: what_is_iso50001
+- intent: goodbye
   examples: |
-    - ISO 50001 nedir?
-    - ISO 50001 standardı hakkında bilgi verir misin?
-    - Enerji yönetim sistemi standardını açıklar mısın?
-    - ISO 50001'in amacı nedir?
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
 
-- intent: iso50001_benefits
+- intent: affirm
   examples: |
-    - ISO 50001'in faydaları nelerdir?
-    - ISO 50001 uygulamanın avantajları neler?
-    - Enerji yönetim sistemi kurmanın faydaları nelerdir?
-    - ISO 50001 bize ne kazandırır?
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
 
-- intent: iso50001_implementation
+- intent: deny
   examples: |
-    - ISO 50001 nasıl uygulanır?
-    - Enerji yönetim sistemi kurulum adımları nelerdir?
-    - ISO 50001 sertifikası nasıl alınır?
-    - ISO 50001 uygulama süreci nasıl işler?
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so sad
+    - so unhappy
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+
+- intent: fallback
+  examples: |
+    - xyz
+
+- intent: feedback_positive
+  examples: |
+    - yes thank you
+    - yes that was helpful
+    - thank you
+    - that's great
+    - excellent
+    - very helpful
+    - that answers my question
+
+- intent: feedback_negative
+  examples: |
+    - not helpful
+    - I need more information
+    - not enough
+    - I don't understand
+    - that doesn't answer my question
+    - I need more details
+    - can you explain further
+
+- intent: request_more_detail
+  examples: |
+    - Can you provide more details?
+    - Tell me more about this
+    - I'd like to know more
+    - Please elaborate
+    - More information please
+    - Can you go deeper into this topic?
+    - I need more detailed information
+    - Could you explain this further?
+    - Give me more details
+    - I want to learn more about this
+
+- intent: ask_iso50001_purpose
+  examples: |
+    - What is the purpose of ISO 50001?
+    - Why was ISO 50001 created?
+    - What is ISO 50001 for?
+    - What is the main goal of ISO 50001?
+    - What does ISO 50001 aim to achieve?
+    - What is the objective of ISO 50001?
+    - Can you explain the purpose of ISO 50001?
+    - What is ISO 50001 standard trying to accomplish?
+
+- intent: ask_iso50001_applicability
+  examples: |
+    - Who can use ISO 50001?
+    - What types of organizations can apply ISO 50001?
+    - Is ISO 50001 applicable to small businesses?
+    - Can large corporations use ISO 50001?
+    - Is ISO 50001 only for manufacturing companies?
+    - Can service companies implement ISO 50001?
+    - Is ISO 50001 suitable for all organization sizes?
+    - What is the scope of ISO 50001 applicability?
+
+- intent: ask_enms_definition
+  examples: |
+    - What is an Energy Management System?
+    - What is EnMS?
+    - Can you define EnMS?
+    - What does Energy Management System mean?
+    - How would you describe an Energy Management System?
+    - What constitutes an EnMS?
+    - What is the definition of Energy Management System in ISO 50001?
+    - What is meant by EnMS in the context of ISO 50001?
+
+- intent: ask_iso50001_framework
+  examples: |
+    - What framework does ISO 50001 use?
+    - What is the improvement framework in ISO 50001?
+    - What methodology does ISO 50001 follow?
+    - What is the basis of ISO 50001?
+    - What continual improvement framework is used in ISO 50001?
+    - How is ISO 50001 structured?
+    - What approach does ISO 50001 take for improvement?
+
+- intent: ask_pdca_approach
+  examples: |
+    - How is PDCA applied in energy management?
+    - What is the PDCA cycle in ISO 50001?
+    - How does Plan-Do-Check-Act work in ISO 50001?
+    - Can you explain the PDCA approach for energy management?
+    - What are the steps in the PDCA cycle for ISO 50001?
+    - How is the PDCA methodology used in energy management?
+    - What does each step of PDCA mean in ISO 50001?
+
+- intent: ask_top_management_role
+  examples: |
+    - What is the role of top management in ISO 50001?
+    - How important is management commitment in ISO 50001?
+    - What responsibilities does top management have in ISO 50001?
+    - Why is top management important for ISO 50001 implementation?
+    - What is expected from senior leadership in ISO 50001?
+    - How does management support ISO 50001?
+    - What is the significance of top management in EnMS?
+
+- intent: ask_iso50001_compatibility
+  examples: |
+    - Is ISO 50001 compatible with other standards?
+    - Can ISO 50001 work with ISO 9001?
+    - How does ISO 50001 relate to ISO 14001?
+    - Is ISO 50001 aligned with other ISO standards?
+    - What standards is ISO 50001 compatible with?
+    - Can ISO 50001 be integrated with quality management systems?
+    - How well does ISO 50001 work with environmental management systems?
+
+- intent: ask_iso50001_certification
+  examples: |
+    - Can organizations get certified to ISO 50001?
+    - Is ISO 50001 certification possible?
+    - How can a company be ISO 50001 certified?
+    - Can ISO 50001 be used for self-declaration?
+    - Is registration to ISO 50001 available?
+    - What certification options exist for ISO 50001?
+    - Can we get our EnMS certified to ISO 50001?
+
+- intent: ask_iso50001_requirements
+  examples: |
+    - Does ISO 50001 set absolute energy performance requirements?
+    - What kind of requirements does ISO 50001 establish?
+    - Are there specific energy targets in ISO 50001?
+    - How strict are the requirements in ISO 50001?
+    - Does ISO 50001 mandate specific energy performance levels?
+    - What must organizations comply with in ISO 50001?
+    - Can organizations with different energy performance comply with ISO 50001?
+
+- intent: ask_iso50001_energy_types
+  examples: |
+    - What types of energy does ISO 50001 cover?
+    - Is ISO 50001 only for electrical energy?
+    - Can ISO 50001 be used for renewable energy?
+    - Does ISO 50001 apply to all energy sources?
+    - Is ISO 50001 suitable for fossil fuel management?
+    - Can ISO 50001 be used for any type of energy?
+    - What energy sources are included in ISO 50001?
+
+- intent: ask_energy_policy
+  examples: |
+    - What is an energy policy in ISO 50001?
+    - What is an energy policy?
+    - How important is the energy policy in ISO 50001?
+    - What role does energy policy play in EnMS?
+    - Why do we need an energy policy for ISO 50001?
+    - What should be included in an ISO 50001 energy policy?
+    - How does energy policy relate to objectives and targets?
+    - What is the purpose of an energy policy?
+
+- intent: ask_iso50001_integration
+  examples: |
+    - Can ISO 50001 be integrated with other management systems?
+    - How to integrate ISO 50001 with ISO 14001?
+    - Is it possible to combine ISO 50001 with quality management?
+    - Can ISO 50001 work alongside health and safety systems?
+    - How to implement ISO 50001 with existing management systems?
+    - Can ISO 50001 be part of an integrated management system?
+    - Is ISO 50001 designed to be integrated with other standards?
+
+- intent: ask_iso50001_scope
+  examples: |
+    - What is the scope of ISO 50001?
+    - What does ISO 50001 cover?
+    - What is included in ISO 50001?
+    - What areas does ISO 50001 address?
+    - What is the purpose and scope of ISO 50001?
+    - What does the ISO 50001 standard specify?
+    - What requirements does ISO 50001 specify?
+    - Can you explain the scope of ISO 50001?
+
+- intent: ask_energy_definition
+  examples: |
+    - How is energy defined in ISO 50001?
+    - What is the definition of energy in ISO 50001?
+    - What does energy mean in the context of ISO 50001?
+    - What forms of energy are covered by ISO 50001?
+    - What is considered energy in ISO 50001?
+    - How does ISO 50001 define energy?
+    - What is energy according to ISO 50001?
+
+- intent: ask_energy_baseline
+  examples: |
+    - What is an energy baseline?
+    - How is energy baseline defined in ISO 50001?
+    - What does energy baseline mean?
+    - How is an energy baseline used?
+    - What is the purpose of an energy baseline?
+    - Can you explain what an energy baseline is?
+    - How do you establish an energy baseline?
+
+- intent: ask_energy_consumption
+  examples: |
+    - What is energy consumption?
+    - How is energy consumption defined in ISO 50001?
+    - What does energy consumption mean?
+    - How is energy consumption measured?
+    - What is the definition of energy consumption?
+    - Can you explain energy consumption?
+
+- intent: ask_energy_efficiency
+  examples: |
+    - What is energy efficiency?
+    - How is energy efficiency defined in ISO 50001?
+    - What does energy efficiency mean?
+    - How is energy efficiency measured?
+    - What is the definition of energy efficiency?
+    - Can you explain energy efficiency?
+    - How do you calculate energy efficiency?
+
+- intent: ask_enms_team
+  examples: |
+    - What is an energy management team?
+    - Who should be in the energy management team?
+    - What is the role of the energy management team?
+    - How big should an energy management team be?
+    - What does the energy management team do?
+    - Can you explain what an energy management team is?
+    - What responsibilities does the energy management team have?
+
+- intent: ask_energy_objective
+  examples: |
+    - What is an energy objective?
+    - How is energy objective defined in ISO 50001?
+    - What does energy objective mean?
+    - How do you set energy objectives?
+    - What is the purpose of energy objectives?
+    - Can you explain what energy objectives are?
+    - How are energy objectives related to energy policy?
+
+- intent: ask_energy_performance
+  examples: |
+    - What is energy performance?
+    - How is energy performance defined in ISO 50001?
+    - What does energy performance mean?
+    - How is energy performance measured?
+    - What is included in energy performance?
+    - Can you explain energy performance?
+    - What are the components of energy performance?
+
+- intent: ask_energy_performance_indicator
+  examples: |
+    - What is an energy performance indicator?
+    - What is an EnPI?
+    - How are EnPIs defined in ISO 50001?
+    - What does EnPI mean?
+    - How do you develop energy performance indicators?
+    - What is the purpose of energy performance indicators?
+    - Can you explain what EnPIs are?
+    - How are energy performance indicators expressed?
+
+- intent: ask_energy_review
+  examples: |
+    - What is an energy review?
+    - How is energy review defined in ISO 50001?
+    - What does energy review mean?
+    - How do you conduct an energy review?
+    - What is the purpose of an energy review?
+    - Can you explain what an energy review is?
+    - What is included in an energy review?
+
+- intent: ask_energy_services
+  examples: |
+    - What are energy services?
+    - How are energy services defined in ISO 50001?
+    - What does energy services mean?
+    - What is included in energy services?
+    - Can you explain what energy services are?
+    - What activities are considered energy services?
+
+- intent: ask_energy_target
+  examples: |
+    - What is an energy target?
+    - How is energy target defined in ISO 50001?
+    - What does energy target mean?
+    - How do you set energy targets?
+    - What is the difference between energy objectives and targets?
+    - Can you explain what energy targets are?
+    - How are energy targets related to energy objectives?
+
+- intent: ask_energy_use
+  examples: |
+    - What is energy use?
+    - How is energy use defined in ISO 50001?
+    - What does energy use mean?
+    - What are examples of energy use?
+    - How is energy use different from energy consumption?
+    - Can you explain what energy use is?
+    - What activities are considered energy use?
+
+- intent: ask_interested_party
+  examples: |
+    - What is an interested party in ISO 50001?
+    - How is interested party defined in ISO 50001?
+    - Who are the interested parties in energy management?
+    - What does interested party mean?
+    - Can you explain what an interested party is?
+    - Who can be considered an interested party?
+
+- intent: ask_internal_audit
+  examples: |
+    - What is an internal audit in ISO 50001?
+    - How is internal audit defined in ISO 50001?
+    - What does internal audit mean?
+    - How do you conduct an internal audit for EnMS?
+    - What is the purpose of an internal audit?
+    - Can you explain what an internal audit is?
+    - What is involved in an internal audit?
+
+- intent: ask_nonconformity
+  examples: |
+    - What is a nonconformity in ISO 50001?
+    - How is nonconformity defined in ISO 50001?
+    - What does nonconformity mean?
+    - What are examples of nonconformities in EnMS?
+    - How do you handle nonconformities?
+    - Can you explain what a nonconformity is?
+    - What constitutes a nonconformity?
+
+- intent: ask_organization
+  examples: |
+    - How is organization defined in ISO 50001?
+    - What does organization mean in ISO 50001?
+    - What entities are considered organizations in ISO 50001?
+    - Who can implement ISO 50001 as an organization?
+    - Can you explain what an organization is in the context of ISO 50001?
+    - What qualifies as an organization under ISO 50001?
+
+- intent: ask_preventive_action
+  examples: |
+    - What is preventive action in ISO 50001?
+    - How is preventive action defined in ISO 50001?
+    - What does preventive action mean?
+    - What is the difference between preventive and corrective action?
+    - How do you implement preventive actions?
+    - Can you explain what preventive action is?
+    - When should preventive action be taken?
+
+- intent: ask_procedure
+  examples: |
+    - What is a procedure in ISO 50001?
+    - How is procedure defined in ISO 50001?
+    - What does procedure mean?
+    - What is a documented procedure?
+    - Do procedures need to be documented?
+    - Can you explain what a procedure is?
+    - What is the purpose of procedures in EnMS?
+
+- intent: ask_record
+  examples: |
+    - What is a record in ISO 50001?
+    - How is record defined in ISO 50001?
+    - What does record mean?
+    - What types of records are required in EnMS?
+    - How do you maintain records for ISO 50001?
+    - Can you explain what a record is?
+    - What is the purpose of records in EnMS?
+
+- intent: ask_significant_energy_use
+  examples: |
+    - What is significant energy use?
+    - How is significant energy use defined in ISO 50001?
+    - What does significant energy use mean?
+    - How do you identify significant energy uses?
+    - What criteria determine significant energy use?
+    - Can you explain what significant energy use is?
+    - Why is identifying significant energy use important?
+
+- intent: ask_boundaries
+  examples: |
+    - What are boundaries in ISO 50001?
+    - How are boundaries defined in ISO 50001?
+    - What does boundaries mean in energy management?
+    - How do you establish boundaries for EnMS?
+    - What examples of boundaries exist in ISO 50001?
+    - Can you explain what boundaries are?
+    - Why is defining boundaries important in EnMS?
+
+- intent: ask_continual_improvement
+  examples: |
+    - What is continual improvement in ISO 50001?
+    - How is continual improvement defined in ISO 50001?
+    - What does continual improvement mean?
+    - How do you achieve continual improvement in EnMS?
+    - Why is continual improvement important?
+    - Can you explain what continual improvement is?
+    - What is the process of continual improvement?
+
+- intent: ask_correction
+  examples: |
+    - What is a correction in ISO 50001?
+    - How is correction defined in ISO 50001?
+    - What does correction mean?
+    - What is the difference between correction and corrective action?
+    - When do you apply a correction?
+    - Can you explain what a correction is?
+    - How do you implement corrections?
+
+- intent: ask_corrective_action
+  examples: |
+    - What is corrective action in ISO 50001?
+    - How is corrective action defined in ISO 50001?
+    - What does corrective action mean?
+    - What is the difference between corrective and preventive action?
+    - When do you take corrective action?
+    - Can you explain what corrective action is?
+    - How do you implement corrective actions?
+- intent: ask_general_requirements
+  examples: |
+    - What are the general requirements of ISO 50001?
+    - What must an organization do to comply with ISO 50001?
+    - What are the basic requirements for an EnMS?
+    - What are the main requirements of ISO 50001?
+    - What does ISO 50001 require from organizations?
+    - What are the fundamental requirements of an energy management system?
+    - What must be established for ISO 50001 compliance?
+    - What are the core requirements of ISO 50001?
+
+- intent: ask_management_responsibility
+  examples: |
+    - What is management responsibility in ISO 50001?
+    - What responsibilities does management have in EnMS?
+    - How is management involved in ISO 50001?
+    - What role does management play in energy management?
+    - What are management's duties in ISO 50001?
+    - What is expected from management in an EnMS?
+    - How should management support the EnMS?
+    - What are the management requirements in ISO 50001?
+
+- intent: ask_top_management_commitment
+  examples: |
+    - How does top management demonstrate commitment in ISO 50001?
+    - What must top management do to support EnMS?
+    - What are top management's responsibilities in ISO 50001?
+    - How should top management show commitment to energy management?
+    - What actions demonstrate top management commitment?
+    - What is expected from top management in ISO 50001?
+    - How can top management support the EnMS?
+    - What are the requirements for top management in ISO 50001?
+
+- intent: ask_management_representative
+  examples: |
+    - What is a management representative in ISO 50001?
+    - What are the responsibilities of the management representative?
+    - What authority does the management representative have?
+    - Who can be a management representative?
+    - What is the role of the management representative in EnMS?
+    - What duties does the management representative have?
+    - What is expected from the management representative?
+    - What skills should a management representative have?
+
+- intent: ask_energy_policy_requirements
+  examples: |
+    - What should be included in an energy policy?
+    - What are the requirements for an energy policy in ISO 50001?
+    - How should an energy policy be structured?
+    - What must an energy policy contain?
+    - What are the key elements of an energy policy?
+    - What should an ISO 50001 energy policy address?
+    - What commitments should be in an energy policy?
+    - How should an organization define its energy policy?
+
+- intent: ask_energy_planning_process
+  examples: |
+    - What is energy planning in ISO 50001?
+    - How should energy planning be conducted?
+    - What does the energy planning process involve?
+    - What are the steps in energy planning?
+    - What is included in the energy planning process?
+    - How should organizations approach energy planning?
+    - What is the purpose of energy planning?
+    - What activities are part of energy planning?
+
+- intent: ask_legal_requirements
+  examples: |
+    - How should legal requirements be handled in ISO 50001?
+    - What does ISO 50001 say about legal requirements?
+    - How should an organization address legal requirements?
+    - What is required regarding legal compliance in ISO 50001?
+    - How should legal and other requirements be managed?
+    - What must organizations do about legal requirements?
+    - How often should legal requirements be reviewed?
+    - What is the process for handling legal requirements?
+
+- intent: ask_energy_review_process
+  examples: |
+    - What is an energy review in ISO 50001?
+    - How should an energy review be conducted?
+    - What does the energy review process involve?
+    - What are the steps in an energy review?
+    - What must be included in an energy review?
+    - How should organizations approach energy review?
+    - What is the purpose of an energy review?
+    - What activities are part of an energy review?
+
+- intent: ask_energy_baseline_establishment
+  examples: |
+    - How is an energy baseline established?
+    - What is the process for creating an energy baseline?
+    - How should an organization establish its energy baseline?
+    - What data is needed for an energy baseline?
+    - When should an energy baseline be adjusted?
+    - What is required for establishing an energy baseline?
+    - How is the energy baseline used in ISO 50001?
+    - What are the requirements for energy baseline in ISO 50001?
+
+- intent: ask_enpi_identification
+  examples: |
+    - How are EnPIs identified in ISO 50001?
+    - What is the process for determining EnPIs?
+    - How should an organization select its EnPIs?
+    - What makes a good energy performance indicator?
+    - How should EnPIs be reviewed and updated?
+    - What are the requirements for EnPIs in ISO 50001?
+    - How are EnPIs used in energy management?
+    - What criteria should be used for selecting EnPIs?
+
+- intent: ask_energy_objectives_targets
+  examples: |
+    - How should energy objectives and targets be established?
+    - What is required for energy objectives and targets?
+    - How should action plans be developed for objectives?
+    - What should be considered when setting energy targets?
+    - How are energy objectives related to energy policy?
+    - What must be included in energy management action plans?
+    - How should energy objectives be documented?
+    - What timeframes should be set for energy targets?
+
+- intent: ask_implementation_operation
+  examples: |
+    - What is involved in implementation and operation?
+    - How should the EnMS be implemented?
+    - What are the operational requirements in ISO 50001?
+    - How should energy action plans be implemented?
+    - What aspects are covered in implementation and operation?
+    - What does ISO 50001 require for implementation?
+    - How should organizations operate their EnMS?
+    - What is the implementation phase of ISO 50001?
+
+- intent: ask_competence_training
+  examples: |
+    - What are the training requirements in ISO 50001?
+    - How should competence be ensured in EnMS?
+    - What awareness is required for personnel?
+    - What training should be provided for energy management?
+    - How should organizations address competence requirements?
+    - What does ISO 50001 say about training?
+    - Who needs to be trained in an EnMS?
+    - What awareness should employees have about energy management?
+
+- intent: ask_communication_requirements
+  examples: |
+    - What are the communication requirements in ISO 50001?
+    - How should energy performance be communicated?
+    - What internal communication is required for EnMS?
+    - What external communication is needed for ISO 50001?
+    - How should organizations communicate about their EnMS?
+    - What does ISO 50001 require for communication?
+    - How should feedback on the EnMS be handled?
+    - What communication processes are needed for energy management?
+
+- intent: ask_documentation_requirements
+  examples: |
+    - What documentation is required for ISO 50001?
+    - What documents must be maintained for EnMS?
+    - What should be documented in an energy management system?
+    - What are the documentation requirements in ISO 50001?
+    - What core elements need documentation in EnMS?
+    - How extensive should EnMS documentation be?
+    - What factors affect the level of documentation needed?
+    - What must be included in EnMS documentation?
+
+- intent: ask_document_control
+  examples: |
+    - How should documents be controlled in ISO 50001?
+    - What are the document control requirements?
+    - How should EnMS documents be managed?
+    - What procedures are needed for document control?
+    - How should document revisions be handled?
+    - What does ISO 50001 require for document control?
+    - How should obsolete documents be managed?
+    - What is the process for controlling EnMS documents?
+
+- intent: ask_operational_control
+  examples: |
+    - What is operational control in ISO 50001?
+    - How should operations be controlled for energy management?
+    - What operational criteria should be established?
+    - How should maintenance activities be managed?
+    - What does ISO 50001 require for operational control?
+    - How should significant energy uses be controlled?
+    - What should be communicated about operational controls?
+    - How should contingency situations be handled?
+
+- intent: ask_design_considerations
+  examples: |
+    - How should design be approached in ISO 50001?
+    - What design considerations are required for energy management?
+    - How should energy performance be incorporated into design?
+    - What does ISO 50001 say about design?
+    - How should energy efficiency be considered in design?
+    - What design activities should consider energy performance?
+    - How should design results be recorded?
+    - What is required for design in ISO 50001?
+
+- intent: ask_procurement
+  examples: |
+    - What are the procurement requirements in ISO 50001?
+    - How should energy services and products be procured?
+    - What criteria should be used for energy-related procurement?
+    - How should suppliers be informed about energy requirements?
+    - What does ISO 50001 say about purchasing?
+    - How should energy efficiency be considered in procurement?
+    - What purchasing specifications are needed for energy?
+    - How should energy performance affect procurement decisions?
+
+- intent: ask_monitoring_measurement
+  examples: |
+    - What should be monitored and measured in ISO 50001?
+    - How should energy performance be monitored?
+    - What are the key characteristics to measure?
+    - What measurement plan is required for ISO 50001?
+    - How should measurement equipment be managed?
+    - What does ISO 50001 require for monitoring?
+    - How should energy performance deviations be handled?
+    - What records are needed for monitoring and measurement?
+
+- intent: ask_compliance_evaluation
+  examples: |
+    - How should compliance be evaluated in ISO 50001?
+    - What is required for legal compliance evaluation?
+    - How often should compliance be assessed?
+    - What records are needed for compliance evaluation?
+    - How should organizations evaluate their compliance?
+    - What does ISO 50001 say about compliance evaluation?
+    - What process is needed to evaluate compliance?
+    - How should compliance with energy requirements be verified?
+
+- intent: ask_internal_audit_process
+  examples: |
+    - What is required for internal audits in ISO 50001?
+    - How should EnMS audits be conducted?
+    - What should be covered in internal audits?
+    - How should audit plans be developed?
+    - How should auditors be selected?
+    - What does ISO 50001 require for internal audits?
+    - How often should internal audits be performed?
+    - How should audit results be reported?
+
+- intent: ask_nonconformities_handling
+  examples: |
+    - How should nonconformities be handled in ISO 50001?
+    - What is the process for addressing nonconformities?
+    - What corrective actions are required for nonconformities?
+    - How should preventive actions be implemented?
+    - What does ISO 50001 say about nonconformities?
+    - How should potential nonconformities be addressed?
+    - What records are needed for corrective actions?
+    - How should the effectiveness of actions be reviewed?
+
+- intent: ask_records_control
+  examples: |
+    - How should records be controlled in ISO 50001?
+    - What records must be maintained for EnMS?
+    - What are the requirements for record control?
+    - How should energy performance records be managed?
+    - What does ISO 50001 require for records?
+    - How should records be identified and retrieved?
+    - What characteristics should EnMS records have?
+    - How long should EnMS records be retained?
+
+- intent: ask_management_review_process
+  examples: |
+    - What is a management review in ISO 50001?
+    - How often should management reviews be conducted?
+    - What is the purpose of management review?
+    - How should management reviews be documented?
+    - What does ISO 50001 require for management review?
+    - Who should participate in management reviews?
+    - What should be achieved through management review?
+    - How should management review be planned?
+
+- intent: ask_management_review_input
+  examples: |
+    - What inputs are required for management review?
+    - What should be considered in management review?
+    - What information is needed for management review?
+    - What should be reviewed in management review meetings?
+    - What does ISO 50001 require as management review inputs?
+    - What previous actions should be reviewed?
+    - What performance data should be included in management review?
+    - What recommendations should be considered in management review?
+
+- intent: ask_management_review_output
+  examples: |
+    - What outputs should result from management review?
+    - What decisions should come from management review?
+    - What actions should result from management review?
+    - What changes might be made after management review?
+    - What does ISO 50001 require as management review outputs?
+    - How should management review results be documented?
+    - What should be included in management review outputs?
+    - How should management review lead to improvement?
+
+- intent: ask_annex_a_purpose
+  examples: |
+    - What is the purpose of Annex A in ISO 50001?
+    - Why is Annex A included in ISO 50001?
+    - What does Annex A provide in ISO 50001?
+    - How should Annex A be used in ISO 50001?
+    - What is the role of Annex A in the standard?
+    - Is Annex A mandatory in ISO 50001?
+    - What kind of information is in Annex A?
+    - How does Annex A relate to the main requirements?
+
+- intent: ask_energy_performance_concept
+  examples: |
+    - What is the concept of energy performance in ISO 50001?
+    - How is energy performance conceptualized in ISO 50001?
+    - What does energy performance include?
+    - What activities can improve energy performance?
+    - How does ISO 50001 define energy performance?
+    - What is the relationship between energy use and performance?
+    - What is Figure A.1 in ISO 50001?
+    - How are energy efficiency and consumption related to performance?
+
+- intent: ask_management_responsibility_guidance
+  examples: |
+    - What guidance does Annex A provide on management responsibility?
+    - How can top management support energy management?
+    - What is the guidance on management representative in Annex A?
+    - How should the energy management team be formed?
+    - What does Annex A say about top management communication?
+    - How can management demonstrate commitment according to Annex A?
+    - What is the role of the energy management team?
+    - How does Annex A describe management involvement?
+
+- intent: ask_energy_policy_guidance
+  examples: |
+    - What guidance does Annex A provide on energy policy?
+    - How should the energy policy be developed according to Annex A?
+    - What does Annex A say about energy policy dissemination?
+    - Can transportation be included in the EnMS scope?
+    - How is energy policy described in Annex A?
+    - What is the purpose of energy policy according to Annex A?
+    - How detailed should the energy policy be?
+    - What is the role of energy policy in organizational behavior?
+
+- intent: ask_energy_planning_guidance
+  examples: |
+    - What guidance does Annex A provide on energy planning?
+    - What is Figure A.2 in ISO 50001?
+    - How is the energy planning process conceptualized?
+    - What are the inputs and outputs of energy planning?
+    - What does Annex A say about the energy planning process?
+    - How should energy planning be approached?
+    - What are the key elements of energy planning?
+    - What is the focus of energy planning according to Annex A?
+
+- intent: ask_energy_review_guidance
+  examples: |
+    - What guidance does Annex A provide on energy review?
+    - How should energy use be identified and evaluated?
+    - What personnel should be considered in energy review?
+    - What energy sources should be considered in review?
+    - How often should the energy review be updated?
+    - What does Annex A say about energy review?
+    - Who should be included in the energy review process?
+    - What alternative energy sources should be considered?
+
+- intent: ask_energy_baseline_guidance
+  examples: |
+    - What guidance does Annex A provide on energy baseline?
+    - What is a suitable data period for energy baseline?
+    - What variables affect energy baseline?
+    - How should the energy baseline be maintained?
+    - What does Annex A say about adjusting the baseline?
+    - How long should baseline records be kept?
+    - What factors should be considered in establishing a baseline?
+    - How does Annex A describe energy baseline maintenance?
+
+- intent: ask_enpi_guidance
+  examples: |
+    - What guidance does Annex A provide on EnPIs?
+    - What types of EnPIs can be used?
+    - What are examples of Energy Performance Indicators?
+    - How should EnPIs be selected?
+    - When should EnPIs be updated?
+    - What does Annex A say about energy performance indicators?
+    - Can EnPIs be simple or complex?
+    - How do EnPIs relate to organizational operations?
+
+- intent: ask_energy_objectives_guidance
+  examples: |
+    - What guidance does Annex A provide on energy objectives?
+    - What types of action plans can organizations develop?
+    - How should action plan results be verified?
+    - What examples of action plans does Annex A provide?
+    - What does Annex A say about energy targets?
+    - How should energy objectives be implemented?
+    - What should be included in energy management action plans?
+    - How can awareness be included in action plans?
+
+- intent: ask_implementation_operation_guidance
+  examples: |
+    - What guidance does Annex A provide on implementation and operation?
+    - How should the EnMS be implemented according to Annex A?
+    - What operational considerations does Annex A mention?
+    - What does Annex A say about implementing the EnMS?
+    - How should organizations operate their EnMS?
+    - What aspects of implementation does Annex A cover?
+    - What guidance is provided for EnMS operation?
+    - How does Annex A address implementation challenges?
+
+- intent: ask_competence_training_guidance
+  examples: |
+    - What guidance does Annex A provide on competence and training?
+    - How should competence be defined according to Annex A?
+    - What factors determine competency in ISO 50001?
+    - How should training needs be identified?
+    - What does Annex A say about awareness training?
+    - How is competence described in Annex A?
+    - What training considerations does Annex A mention?
+    - How should organizations approach energy management training?
+
+- intent: ask_documentation_guidance
+  examples: |
+    - What guidance does Annex A provide on documentation?
+    - Which procedures must be documented according to Annex A?
+    - How much documentation is required for EnMS?
+    - What documents should organizations develop?
+    - What does Annex A say about EnMS documentation?
+    - Are all procedures required to be documented?
+    - How flexible is the documentation requirement?
+    - What is the purpose of documentation according to Annex A?
+
+- intent: ask_operational_control_guidance
+  examples: |
+    - What guidance does Annex A provide on operational control?
+    - How should operations be evaluated according to Annex A?
+    - What operations should be controlled for energy management?
+    - How should significant energy uses be operated?
+    - What does Annex A say about maintenance activities?
+    - How should adverse impacts be controlled?
+    - What operational aspects should be considered?
+    - How does operational control relate to energy policy?
+
+- intent: ask_procurement_guidance
+  examples: |
+    - What guidance does Annex A provide on procurement?
+    - How can procurement improve energy performance?
+    - What are energy purchasing specifications?
+    - How can the supply chain be influenced?
+    - What does Annex A say about energy procurement?
+    - What elements can be included in purchasing specifications?
+    - How do market factors affect energy purchasing?
+    - Can supplier specifications be used for procurement?
+
+- intent: ask_internal_audit_guidance
+  examples: |
+    - What guidance does Annex A provide on internal audits?
+    - Who can perform internal audits of EnMS?
+    - How is auditor independence demonstrated?
+    - Can EnMS audits be combined with other audits?
+    - What does Annex A say about audit competence?
+    - How should internal auditors be selected?
+    - What is the difference between energy audit and EnMS audit?
+    - How should internal audits be conducted according to Annex A?
+
+- intent: ask_management_review_guidance
+  examples: |
+    - What guidance does Annex A provide on management review?
+    - How often should management reviews be conducted?
+    - Do all EnMS elements need to be reviewed at once?
+    - What is the timeframe for management review?
+    - What does Annex A say about management review scope?
+    - How comprehensive should management reviews be?
+    - Can management reviews be conducted in stages?
+    - What aspects of EnMS should be reviewed by management?
+
+- intent: ask_benchmarking
+  examples: |
+    - What is benchmarking in ISO 50001?
+    - How is benchmarking defined in Annex A?
+    - What types of benchmarking exist?
+    - How can benchmarking be used in energy management?
+    - What is internal vs external benchmarking?
+    - How does benchmarking contribute to energy review?
+    - What data is needed for effective benchmarking?
+    - How can benchmarking help set energy objectives?
+
+- intent: ask_energy_audit
+  examples: |
+    - What is an energy audit according to ISO 50001?
+    - How is energy audit defined in Annex A?
+    - What is the difference between energy audit and EnMS audit?
+    - What outputs come from an energy audit?
+    - How should energy audits be conducted?
+    - What is the purpose of energy audits?
+    - How do energy audits help identify improvement opportunities?
+    - When should energy audits be performed?
+
+- intent: ask_iso_standards_correspondence
+  examples: |
+    - What is the correspondence between ISO standards?
+    - How does ISO 50001 relate to other ISO standards?
+    - What is Annex B in ISO 50001?
+    - How do ISO management system standards correspond?
+    - What is the relationship between ISO 50001 and other standards?
+    - How does ISO 50001 align with other management systems?
+    - What standards are compared in Annex B?
+    - How are ISO standards related to each other?
+
+- intent: ask_iso50001_iso9001_correspondence
+  examples: |
+    - How does ISO 50001 correspond to ISO 9001?
+    - What is the relationship between energy management and quality management?
+    - How do ISO 50001 and ISO 9001 compare?
+    - What clauses in ISO 50001 match with ISO 9001?
+    - How can I integrate ISO 50001 with ISO 9001?
+    - What are the similarities between ISO 50001 and ISO 9001?
+    - How do energy management and quality management systems align?
+    - What is the correspondence between ISO 50001:2011 and ISO 9001:2008?
+
+- intent: ask_iso50001_iso14001_correspondence
+  examples: |
+    - How does ISO 50001 correspond to ISO 14001?
+    - What is the relationship between energy management and environmental management?
+    - How do ISO 50001 and ISO 14001 compare?
+    - What clauses in ISO 50001 match with ISO 14001?
+    - How can I integrate ISO 50001 with ISO 14001?
+    - What are the similarities between ISO 50001 and ISO 14001?
+    - How do energy management and environmental management systems align?
+    - What is the correspondence between ISO 50001:2011 and ISO 14001:2004?
+
+- intent: ask_iso50001_iso22000_correspondence
+  examples: |
+    - How does ISO 50001 correspond to ISO 22000?
+    - What is the relationship between energy management and food safety management?
+    - How do ISO 50001 and ISO 22000 compare?
+    - What clauses in ISO 50001 match with ISO 22000?
+    - How can I integrate ISO 50001 with ISO 22000?
+    - What are the similarities between ISO 50001 and ISO 22000?
+    - How do energy management and food safety management systems align?
+    - What is the correspondence between ISO 50001:2011 and ISO 22000:2005?
+
+- intent: ask_management_system_integration
+  examples: |
+    - How can I integrate multiple ISO management systems?
+    - What is the benefit of integrating ISO standards?
+    - How to implement ISO 50001 with other management systems?
+    - Can ISO 50001 be integrated with other standards?
+    - What is an integrated management system approach?
+    - How to avoid duplication when implementing multiple ISO standards?
+    - What is the best way to integrate ISO 50001 with existing systems?
+    - How does the correspondence table help with integration?
+
+- intent: ask_common_elements_standards
+  examples: |
+    - What elements are common across ISO management standards?
+    - What do ISO 50001, 9001, 14001, and 22000 have in common?
+    - What are the shared requirements in ISO management systems?
+    - What common structure do ISO standards follow?
+    - What are the core elements in all ISO management standards?
+    - How are ISO management system standards similar?
+    - What requirements appear in all ISO management standards?
+    - What is the common framework for ISO standards?
+
+- intent: ask_specific_clause_correspondence
+  examples: |
+    - How do specific clauses correspond between ISO standards?
+    - What ISO 9001 clause corresponds to energy policy in ISO 50001?
+    - How does internal audit in ISO 50001 relate to other standards?
+    - What is the equivalent of management review across standards?
+    - How do documentation requirements compare across ISO standards?
+    - What clause in ISO 14001 matches energy planning in ISO 50001?
+    - How do competence requirements align across standards?
+    - What are the corresponding clauses for operational control?
+
+
+
