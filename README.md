@@ -3,7 +3,7 @@
 **Python Version:** 3.9  
 **Rasa Version:** 3.6.13
 
-A concise guide to set up, train, and run a Rasa chatbot.
+A concise guide to set up, train, run and deploy a Rasa chatbot.
 
 ## Local Installation
 
@@ -73,8 +73,8 @@ gcloud run deploy rasa-service --image gcr.io/your-project-id/rasa-chatbot --pla
 gcloud run services update rasa-service --min-instances=1
 ```
 
-# After these steps, your chatbot application that you created with rasa will be available in an interface.
+### After these steps, your chatbot application that you created with rasa will be available in an interface.
 
-# You can use it as you wish.
+### You can use it as you wish.
 
 
