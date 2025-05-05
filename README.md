@@ -15,9 +15,6 @@ conda activate rasa
 # Install Rasa
 pip install rasa==3.6.13
 
-# Initialize a new Rasa project
-rasa init
-
 # Customize your files and train model
 rasa train
 
