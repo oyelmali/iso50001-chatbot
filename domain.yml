@@ -428,9 +428,9 @@ responses:
 
   utter_specific_clause_correspondence:
   - text: "The correspondence table in Annex B of ISO 50001 provides detailed mapping between specific clauses. For example, ISO 50001 clause 4.5.2 (Competence, training and awareness) corresponds to ISO 9001 clause 6.2.2, ISO 14001 clause 4.4.2, and ISO 22000 clause 6.2.2. Similarly, ISO 50001 clause 4.6.3 (Internal audit) corresponds to ISO 9001 clause 8.2.2, ISO 14001 clause 4.5.5, and ISO 22000 clause 8.4.1. This detailed mapping helps organizations identify exactly how requirements in one standard relate to requirements in another standard."
-  - what_is_iso50001
-  - iso50001_benefits
-  - iso50001_implementation
+  - text: "what_is_iso50001"
+  - text: "iso50001_benefits"
+  - text: "iso50001_implementation"
 
 session_config:
   session_expiration_time: 60
