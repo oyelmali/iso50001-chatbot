@@ -3,7 +3,6 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-
   - affirm
   - deny
   - mood_great
@@ -432,26 +431,6 @@ responses:
   - what_is_iso50001
   - iso50001_benefits
   - iso50001_implementation
-
-responses:
-  utter_greet:
-  - text: "Merhaba! ISO 50001 hakkında size nasıl yardımcı olabilirim?"
-
-  utter_iamabot:
-  - text: "Ben ISO 50001 standardı hakkında bilgi veren bir chatbot'um."
-  
-  utter_goodbye:
-  - text: "Görüşmek üzere! Başka sorunuz olursa yine beklerim."
-
-  utter_what_is_iso50001:
-  - text: "ISO 50001, kuruluşların enerji performansını sürekli olarak iyileştirmek için enerji yönetim sistemleri kurmalarına yardımcı olan uluslararası bir standarttır. Bu standart, enerji politikası oluşturma, enerji hedefleri belirleme ve enerji kullanımını izleme konularında rehberlik sağlar."
-
-  utter_iso50001_benefits:
-  - text: "ISO 50001'in faydaları arasında enerji maliyetlerinin azaltılması, karbon ayak izinin küçültülmesi, yasal gerekliliklere uyum sağlanması, kurumsal itibarın artırılması ve sürdürülebilir enerji yönetimi uygulamalarının teşvik edilmesi yer alır."
-
-  utter_iso50001_implementation:
-  - text: "ISO 50001 uygulaması genellikle şu adımları içerir: Üst yönetim desteğinin sağlanması, mevcut enerji durumunun değerlendirilmesi, enerji politikası ve hedeflerinin belirlenmesi, enerji yönetim ekibinin oluşturulması, enerji performans göstergelerinin tanımlanması, izleme ve ölçüm sistemlerinin kurulması, dokümantasyon ve iç denetimler."
-
 
 session_config:
   session_expiration_time: 60
